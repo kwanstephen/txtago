@@ -139,9 +139,10 @@ public class MessagingService
 		try {
 			if(content.getContentUrl()!=null && !content.getContentUrl().trim().equals(""))
 			{
-				String contentstring = getUrlContent(content.getContentUrl());
-				log.debug(contentstring);
-				contentBuffer = contentstring.getBytes();
+				contentBuffer = getUrlContent(content.getContentUrl());
+				log.debug("payload ----------");
+				log.debug(contentBuffer);
+				
 			}
 			else
 			{
@@ -187,21 +188,17 @@ public class MessagingService
 		
 	}
 	
-	public String getUrlContent(String webPage) {
-		String result = null;
+	public byte[] getUrlContent(String webPage) {
+		byte[] result = null;
 		try {
 			URL url = new URL(webPage);
 			URLConnection urlConnection = url.openConnection();
 			InputStream is = urlConnection.getInputStream();
-			InputStreamReader isr = new InputStreamReader(is);
-
-			int numCharsRead;
-			char[] charArray = new char[1024];
-			StringBuffer sb = new StringBuffer();
-			while ((numCharsRead = isr.read(charArray)) > 0) {
-				sb.append(charArray, 0, numCharsRead);
-			}
-			result = sb.toString();
+			
+			result = InputStreamUtil.toByteArray(is);
+			is.close();
+			
+			
 
 		} catch (Exception e) {
 			log.error("",e);
