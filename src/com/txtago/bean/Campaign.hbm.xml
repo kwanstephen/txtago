@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="com.txtago.bean.Campaign" table="TXG_CAMPAIGN">
+        <id name="id" column="TXG_CAMPAIGN_ID" type="integer">
+            <generator class="increment"/>
+        </id>
+    <property name="userId" type="integer" column="USER_ID"/>    
+ 	<property name="shortcode" type="string" column="SHORTCODE"/>
+	<property name="keyword" type="string" column="KEYWORD"/>
+	<property name="description" type="string" column="DESCRIPTION"/>
+	<property name="title" type="string" column="TITLE"/>
+	<property name="deliveryDate" type="string" column="DELIVERY_DATE"/>
+	<property name="deliveryHour" type="int" column="DELIVERY_HOUR"/>
+	<property name="status" type="string" column="STATUS"/>
+    </class>
+</hibernate-mapping>
+

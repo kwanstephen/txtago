@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="com.txtago.bean.Subscription" table="TXG_SUBSCRIPTION">
+        <id name="id" column="TXG_SUBSCRIPTION_ID" type="integer">
+            <generator class="increment"/>
+        </id>
+ 	<property name="price" type="integer" column="PRICE"/>
+	<property name="status" type="string" column="STATUS"/>
+	<property name="messageLimit" type="integer" column="MESSAGE_LIMIT"/>
+	<property name="billingCode" type="string" column="BILLING_CODE"/>
+    </class>
+</hibernate-mapping>
+

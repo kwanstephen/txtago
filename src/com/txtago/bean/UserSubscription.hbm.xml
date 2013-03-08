@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="com.txtago.bean.UserSubscription" table="TXG_USER_SUBSCRIPTION">
+        <id name="id" column="TXG_USER_SUBSCRIPTION_ID" type="integer">
+            <generator class="increment"/>
+        </id>
+ 	<property name="subscriptionId" type="integer" column="SUBSCRIPTION_ID"/>
+ 	<property name="userId" type="integer" column="USER_ID"/>
+	<property name="status" type="string" column="STATUS"/>
+	<property name="paidBillingId" type="string" column="PAID_BILLING_ID"/>
+	<property name="usage" type="integer" column="USAGE"/>
+	<property name="nextBillingDate" type="string" column="NEXT_BILLING_DATE"/>
+    </class>
+</hibernate-mapping>
+

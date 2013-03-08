@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="com.txtago.bean.User" table="TXG_USER">
+        <id name="id" column="TXG_USER_ID" type="integer">
+            <generator class="increment"/>
+        </id>
+ 	<property name="firstName" type="string" column="FIRSTNAME"/>
+ 	<property name="lastName" type="string" column="LASTNAME"/>
+	<property name="password" type="string" column="PASSWORD"/>
+	<property name="role" type="string" column="ROLE"/>
+	<property name="email" type="string" column="EMAIL"/>
+	<property name="status" type="string" column="STATUS"/>
+	
+
+    </class>
+</hibernate-mapping>
+

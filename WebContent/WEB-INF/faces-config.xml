@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+  version="1.2">
+  
+  <application>
+   
+  </application>
+   
+  <managed-bean>
+    <managed-bean-name>loginBackingBean</managed-bean-name>
+    <managed-bean-class>com.txtago.controller.LoginController</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  
+            
+  <managed-bean>
+    <managed-bean-name>addUserBackingBean</managed-bean-name>
+    <managed-bean-class>com.txtago.controller.UserController</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+
+  <managed-bean>
+    <managed-bean-name>subscriptionBackingBean</managed-bean-name>
+    <managed-bean-class>com.txtago.controller.SubscriptionController</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+
+  <managed-bean>
+    <managed-bean-name>campaignBackingBean</managed-bean-name>
+    <managed-bean-class>com.txtago.controller.CampaignController</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <managed-bean>
+    <managed-bean-name>reportBackingBean</managed-bean-name>
+    <managed-bean-class>com.txtago.controller.ReportController</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  
+  <managed-bean>
+    <managed-bean-name>user</managed-bean-name>
+    <managed-bean-class>com.txtago.bean.User</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+    
+    
+  <navigation-rule>
+    <from-view-id>/login.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>cancel</from-outcome>
+      <to-view-id>/home.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/home.jsp</to-view-id>
+    </navigation-case>    
+    <navigation-case>
+      <from-outcome>fail</from-outcome>
+      <to-view-id>/login.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/signup.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>cancel</from-outcome>
+      <to-view-id>/home.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/login.jsp</to-view-id>
+    </navigation-case>    
+    <navigation-case>
+      <from-outcome>fail</from-outcome>
+      <to-view-id>/signup.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+
+  <navigation-rule>
+    <from-view-id>/account.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>account-update</from-outcome>
+      <to-view-id>/account-update.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>subscription</from-outcome>
+      <to-view-id>/subscription-home.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>subscribe</from-outcome>
+      <to-view-id>/subscribe.jsp</to-view-id>
+    </navigation-case>    
+    <navigation-case>
+      <from-outcome>credit-card</from-outcome>
+      <to-view-id>/credit-card.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>    
+  
+    <navigation-rule>
+    <from-view-id>/account-update.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>cancel</from-outcome>
+      <to-view-id>/account.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/account.jsp</to-view-id>
+    </navigation-case>    
+    <navigation-case>
+      <from-outcome>fail</from-outcome>
+      <to-view-id>/account-update.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+    <navigation-rule>
+    <from-view-id>/subscription-home.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>account</from-outcome>
+      <to-view-id>/account.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>  
+  
+  <navigation-rule>
+    <from-view-id>/campaigns.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>campaign-list</from-outcome>
+      <to-view-id>/campaign-list.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>  
+
+  <navigation-rule>
+    <from-view-id>/campaign-edit.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>cancel</from-outcome>
+      <to-view-id>/campaign-list.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>fail</from-outcome>
+      <to-view-id>/campaign-edit.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/campaign-list.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>  
+  
+    <navigation-rule>
+    <from-view-id>/campaign-list.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>campaign-list</from-outcome>
+      <to-view-id>/campaign-list.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>campaign-edit</from-outcome>
+      <to-view-id>/campaign-edit.jsp</to-view-id>
+    </navigation-case>
+	<navigation-case>
+      <from-outcome>contact-list</from-outcome>
+      <to-view-id>/contact-list.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>content-edit</from-outcome>
+      <to-view-id>/content-edit.jsp</to-view-id>
+    </navigation-case>    
+  </navigation-rule>  
+
+    <navigation-rule>
+    <from-view-id>/contact-list.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>campaign</from-outcome>
+      <to-view-id>/campaign-list.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>contact-edit</from-outcome>
+      <to-view-id>/contact-edit.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>contact-list</from-outcome>
+      <to-view-id>/contact-list.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>   
+
+  <navigation-rule>
+    <from-view-id>/contact-edit.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>cancel</from-outcome>
+      <to-view-id>/contact-list.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>fail</from-outcome>
+      <to-view-id>/contact-edit.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/contact-list.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>contact-list</from-outcome>
+      <to-view-id>/contact-list.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>   
+  
+    <navigation-rule>
+    <from-view-id>/content-edit.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>cancel</from-outcome>
+      <to-view-id>/campaign-list.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>fail</from-outcome>
+      <to-view-id>/content-edit.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/campaign-list.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>campaign-list</from-outcome>
+      <to-view-id>/campaign-list.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>    
+  
+  <navigation-rule>
+    <from-view-id>/reports.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>report-find</from-outcome>
+      <to-view-id>/report-find.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>report-daily</from-outcome>
+      <to-view-id>/report-daily.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>  
+  
+   <navigation-rule>
+    <from-view-id>/report-find.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>report-find</from-outcome>
+      <to-view-id>/report-find.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>  
+
+   <navigation-rule>
+    <from-view-id>/report-daily.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>report-daily</from-outcome>
+      <to-view-id>/report-daily.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>       
+</faces-config>

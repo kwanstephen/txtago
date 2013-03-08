@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="com.txtago.bean.Message" table="TXG_MESSAGE">
+        <id name="id" column="TXG_MESSAGE_ID" type="integer">
+            <generator class="increment"/>
+        </id>
+    <property name="userId" type="integer" column="USER_ID"/>  
+    <property name="campaignId" type="integer" column="CAMPAIGN_ID"/>    
+	<property name="shortcode" type="string" column="SHORTCODE"/>
+	<property name="destinationMdn" type="string" column="DEST_MDN"/>  
+	<property name="deliveryDate" type="date" column="DELIVERY_DATE"/>
+	<property name="status" type="string" column="STATUS"/>  	
+    </class>
+</hibernate-mapping>
+

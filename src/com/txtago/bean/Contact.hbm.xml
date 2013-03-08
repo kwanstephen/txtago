@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="com.txtago.bean.Contact" table="TXG_CONTACT">
+        <id name="id" column="TXG_CONTACT_ID" type="integer">
+            <generator class="increment"/>
+        </id>
+ 	<property name="campaignId" type="integer" column="CAMPAIGN_ID"/>
+ 	<property name="phone" type="string" column="PHONE"/>
+	
+	
+
+    </class>
+</hibernate-mapping>
+
